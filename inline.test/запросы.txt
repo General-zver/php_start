@@ -1,0 +1,30 @@
+/*создание базы*/
+
+create database inline-test;
+
+/*конец запроса*/
+
+/*создание таблицы для хранения записей блога*/
+
+CREATE TABLE `inline-test`.`posts` 
+( `post_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT , 
+`user_id` INT(10) NOT NULL , 
+`title` VARCHAR(255) NOT NULL , 
+`body` VARCHAR(255) NOT NULL , 
+PRIMARY KEY (`post_id`)) ENGINE = InnoDB;
+
+/*конец запроса*/
+
+/*создание таблицы для хранения комментариев*/
+CREATE TABLE `inline-test`.`comments` 
+( `comment_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT , 
+`user_id` INT(10) UNSIGNED NOT NULL , `name` VARCHAR(255) NOT NULL , 
+`email` VARCHAR(255) NOT NULL , 
+`body` VARCHAR(255) NOT NULL , 
+PRIMARY KEY (`comment_id`)) ENGINE = InnoDB;
+
+/*конец запроса*/
+
+/**/
+INSERT INTO `posts` (`post_id`,`userId`, `title`, `body`) 
+VALUES ('', '', '',''); 
