@@ -18,13 +18,20 @@ PRIMARY KEY (`post_id`)) ENGINE = InnoDB;
 /*создание таблицы для хранения комментариев*/
 CREATE TABLE `inline-test`.`comments` 
 ( `comment_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT , 
-`user_id` INT(10) UNSIGNED NOT NULL , `name` VARCHAR(255) NOT NULL , 
+`user_id` INT(10) UNSIGNED NOT NULL , 
+`name` VARCHAR(255) NOT NULL , 
 `email` VARCHAR(255) NOT NULL , 
 `body` VARCHAR(255) NOT NULL , 
 PRIMARY KEY (`comment_id`)) ENGINE = InnoDB;
 
 /*конец запроса*/
 
-/**/
-INSERT INTO `posts` (`post_id`,`userId`, `title`, `body`) 
+/*добавление записей блога в базу*/
+INSERT INTO `posts` (`post_id`,`user_id`, `title`, `body`) 
 VALUES ('', '', '',''); 
+/*конец запроса*/
+
+/*добавление комментариев в базу*/
+INSERT INTO `comments` (`comment_id`,`user_id`, `name`, `email`, `body`) 
+VALUES ('', '', '','',''); 
+/*конец запроса*/
