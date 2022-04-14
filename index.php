@@ -10,19 +10,21 @@ echo '
 <link type="text/css" rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<div class="formC">
 <div class="formS">
     <form action="" method="POST">
-        <p>Введите слово для поиска:</p>
-        <input type="text" name="textS" value=""></br></br>
-        <input type="submit" name="search" value="Найти">
-    </form>';
+        <p class="h">Введите слово для поиска:</p>
+        <input type="text" name="textS" id="textS" value="" placeholder="Введите текст для поиска"></br></br>
+        <input type="submit" name="search" id="search" value="Найти">
+    </form> </div>
+    <div class="resultCont">';
 
 
 if (isset($_POST['textS'])) 
 {  
     if(strlen($_POST['textS'])<3)
     {
-        echo '<p>малосимволов</p>';
+        echo '<p>мало символов</p>';
         return false;
     } else 
     {
@@ -31,8 +33,8 @@ if (isset($_POST['textS']))
         {
             $substr=$dataComm[$i]['body'];
             if(preg_match($pattern, $substr)>0){
-                echo '<pre><b>Заголовок</b>: '.$dataComm[$i]['name'].'<br>';
-                echo '<b>Текст комментария</b>: '.$dataComm[$i]['body'].'<pre>';
+                echo '<p><b>Заголовок</b>: '.$dataComm[$i]['name'].'<br>';
+                echo '<b>Текст комментария</b>: '.$dataComm[$i]['body'].'<p>';
             }
         }
     }
@@ -42,11 +44,7 @@ if (isset($_POST['textS']))
 }
 
 
-
-
-
-
-echo '</div> 
+echo '</div></div> 
 </body>
 </html>';
 
